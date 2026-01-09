@@ -1,103 +1,109 @@
-<html lang="zh-TW"><head></head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首頁</title>
-    <style>
-        /* CSS 樣式開始 */
-        body {
-            font-family: "標楷體", Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>首頁</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-        header {
-            background-color: #436180;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-        header h1 { margin: 0; padding-bottom: 10px; }
+/* Style the header */
+header {
+  background-color: #97d1ec;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #e4c9fa;
-        }
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #9c9efd;
+  padding: 20px;
+}
 
-        nav li { margin: 0; }
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-        nav a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            font-weight: bold;
-        }
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
 
-        nav a:hover { background-color: #a4d7f5; }
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-        .container {
-            max-width: 960px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            flex: 1;
-            text-align: center;
-        }
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
 
-        /* 圖片通用設定 */
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin: 10px 0;
-            /* border: 1px solid #ddd; */
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #2c3e50;
-            color: #bdc3c7;
-            margin-top: auto;
-        }
-    </style>
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>投高電商</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="introduce.html">特色介紹</a></li>
-                <li><a href="about.html">關於我們</a></li>
-            </ul>
-        </nav>
-    </header>
+<h2>CSS Layout Float</h2>
+<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
+<p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)</p>
 
-    <div class="container">
-        <h2>創意電商</h2>
-        <p>南投高中電子商務科形象網站</p>
-        
-        <img src="logo.png" width="50%" alt="首頁LOGO">
-        
-    </div>
+<header>
+    <h1>投高電商</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="introduce.html">特色介紹</a></li>
+            <li><a href="about.html">關於我們</a></li>
+        </ul>
+    </nav>
+</header>
+  
+  <article>
+    <h1>南投高中電子商務科</h1>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+  </article>
+</section>
 
-    <footer>
-        <p>© 2026 南投高中電子商務科 | 期末實作 13陳怡禎 </p>
-    </footer>
+<footer>  
+  <p>© 2026 南投高中電子商務科 陳怡禎</p>
+</footer>
 
+<div class="container">
+    <h2>創意電商</h2>
+    <p>南投高中電子商務科形象網站</p>
+    
+    <img src="logo.png" width="50%" alt="首頁LOGO">
+    
+</div>
 
+<footer>
 </body></html>
